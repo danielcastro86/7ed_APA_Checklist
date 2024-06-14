@@ -1,0 +1,21 @@
+---
+title: "Relatório de Avaliação"
+output: pdf_document
+params:
+  notas: NULL
+  media: NULL
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, echo=FALSE}
+library(knitr)
+notas_com_media <- rbind(params$notas, c("Média", params$media))
+kable(notas_com_media, col.names = c("Item", "Nota"))
+
+```
+
+
